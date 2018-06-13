@@ -84,10 +84,11 @@ html,body{
     /*background-size: 100% 100%;*/
 }
 .content-9{
-    width: 100%;
-    height: 100%;
-    background: url("../images/9.jpg") no-repeat;
-    background-size: 100% 100%;
+    width: 96%;
+    padding-left: 1%;
+    padding-right: 2%;
+    /*background: url("../images/9.jpg") no-repeat;*/
+    /*background-size: 100% 100%;*/
 }
 .aaa{
     width: 94%;
@@ -118,8 +119,7 @@ html,body{
     font-weight: 500;
 }
 .content-2 .title{
-    top: 6.2%;
-    position: absolute;
+    padding-top: 10.2%;
     width: 85%;
     font-size: 17px;
     color: #ffffff;
@@ -131,8 +131,8 @@ html,body{
     padding-bottom: 4px;
 }
 .content-2 .detail-1,.content-3 .detail-1{
-    position: absolute;
-    top: 26%;
+    /*position: absolute;*/
+    padding-top: 21%;
     width: 85%;
     font-size: 18px;
     color: #000000;
@@ -140,7 +140,7 @@ html,body{
     padding-right: 7%;
 }
 .content-3 .detail-1{
-    top:40%;
+    padding-top: 25%;
 }
 .detail{
     position: absolute;
@@ -149,10 +149,6 @@ html,body{
     padding: 0 20px;
     color: #4A5566;
 }
-/*.detail p{*/
-    /*font-size: 15px;*/
-    /*margin-bottom: 4px;*/
-/*}*/
 .detail ul{
     list-style: none;
 }
@@ -213,8 +209,8 @@ html,body{
     display: inline;
 }
 .problem{
-    position: absolute;
-    top: 30%;
+    /*position: absolute;*/
+    padding-top: 2%;
     width: 85%;
     font-size: 14px;
     color: #000000;
@@ -226,8 +222,7 @@ html,body{
     padding-left: 8px;
 }
 .content-3 .title{
-    top: 10%;
-    position: absolute;
+    padding-top: 15%;
     width: 85%;
     font-size: 28px;
     color: #ffffff;
@@ -311,7 +306,7 @@ html,body{
     padding-right: 20px;
 }
 .content-9 .title{
-    font-size:15px;
+    font-size: 15px;
     text-align: left;
     padding-top: 28px;
     padding-left: 28px;
@@ -325,6 +320,24 @@ html,body{
 .mt{
     margin-top: 16px;
 }
+.map{
+    width: 93%;
+    height: 50%;;
+    margin-top: 20px;
+}
+.qr-code{
+    width: 150px;
+    height: 150px;
+    float: left;
+    padding-left: 20px;
+}
+.weare{
+    padding-top: 11px;
+}
+.follow{
+    margin-top: 10px;
+    color: #4A5566;
+}
 .color{
     color: #F04134;
 }
@@ -332,10 +345,15 @@ html,body{
     color: #000000;
     opacity:0.4 ;
 }
+.symbol{
+    margin-top: 36px;
+}
+.understand{
+    margin-top: 32px;
+}
 .ml{
     margin-left: 10px;
 }
-
 .content-11{
     height: 50%;
     background: #F5F5F5;
@@ -351,32 +369,36 @@ html,body{
 }
 .user-info ul li{
     list-style: none;
-    position: relative;
     margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    background: #ffffff;
+    height: 22px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 16px;
 }
-.name,.tel,.e-mail span,.agency span,.department span,.post span{
-    position: absolute;
-    margin-top: 10px;
-    left: 6%;
-    font-size: 14px;
+.label{
+    /*height: 44px;*/
+    /*line-height: 44px;*/
+    float: left;
+    padding-left: 20px;
 }
-.real-name,.tel-num,.email,.company,.branch,.duties{
-    width: 77%;
-    height: 42px;
-    border: 1px solid #CCCCCC;
-    padding-left: 74px;
-    font-size: 14px;
+.input-item {
+    width: 70%;
+    padding-left: 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
 }
 .company{
-    padding-left: 90px;
-    width: 72%;
+    padding-left: 20px;
+    width: 60%;
 }
 .star{
     color: #FF3C31;
-    font-size: 18px;
     vertical-align: -1px;
 }
-.name-tip,.tel-tip{
+.error-tip{
     display: none;
     width: 130px;
     color: #faa61a;
@@ -384,9 +406,17 @@ html,body{
     background: url(../images/icon_error.png) no-repeat 1px 3px;
     text-align: left;
     padding-left: 17px;
-    margin-top: 7px;
+    margin-top: -10px;
+    margin-bottom: 4px;
+}
+.success{
+    width: 100%;
+    text-align: center;
+    color: red;
 }
 .submit{
+    width: 100%;
+    border: none;
     background: #2196F3;
     height: 44px;
     line-height: 44px;
@@ -459,28 +489,28 @@ html,body{
     animation: start 1.5s infinite ease-in-out;
 }
 /*@media screen  and (max-width: 320px) {*/
-    /*.problem{*/
-        /*top:62%;*/
-    /*}*/
-    /*.common-detail{*/
-        /*font-size: 15px;*/
-    /*}*/
-    /*.content-3 .title{*/
-        /*font-size: 20px;*/
-    /*}*/
-    /*.content-8 .title{*/
-        /*font-size: 15px;*/
-        /*padding-top: 26px;*/
-    /*}*/
+/*.problem{*/
+/*top:62%;*/
+/*}*/
+/*.common-detail{*/
+/*font-size: 15px;*/
+/*}*/
+/*.content-3 .title{*/
+/*font-size: 20px;*/
+/*}*/
+/*.content-8 .title{*/
+/*font-size: 15px;*/
+/*padding-top: 26px;*/
+/*}*/
 /*}*/
 @media only screen and (min-device-width: 375px)and (-webkit-min-device-pixel-ratio: 2) {
     .content-9 .detail {
         top: 67%;
         padding-left: 28px;
     }
-    .problem{
-        top: 61.5%;
-    }
+    /*.problem{*/
+    /*padding-top: 49%*/
+    /*}*/
     .content-1,.content-2{
         height: 80%;
     }
@@ -523,12 +553,12 @@ html,body{
     .content-1 .detail {
         top:38%;
     }
-    .content-2 .detail-1 {
-        top:23%;
-    }
-    .content-3 .detail-1 {
-        top: 32%;
-    }
+    /*.content-2 .detail-1 {*/
+    /*top:23%;*/
+    /*}*/
+    /*.content-3 .detail-1 {*/
+    /*top: 32%;*/
+    /*}*/
     .content-4 .title p{
         padding-bottom: 8px;
     }
@@ -556,17 +586,17 @@ html,body{
     .content-9 .detail{
         top: 59%;
     }
-    .problem {
-        top: 52%;
-    }
+    /*.problem {*/
+    /*padding-top: 36%*/
+    /*}*/
     .content-11 {
         height: 36%;
     }
 }
 @media only screen and (min-width: 414px) {
-    .problem{
-        top:57.5%;
-    }
+    /*.problem{*/
+    /*padding-top:2.5%;*/
+    /*}*/
     .content-4 .title p{
         padding-bottom: 8px;
     }
@@ -591,25 +621,28 @@ html,body{
     .tip p{
         font-size: 16px;
     }
-}
-
-@media only screen and (min-width: 480px) {
-    .problem{
-        top:60%;
-        color: #2196F3;
+    .mt{
+        padding-right: 26px;
     }
 }
 
-@media only screen and (min-width: 560px) {
-    .problem{
-        top:60%;
-        color: #FBFA0A;
-    }
-}
+/*@media only screen and (min-width: 480px) {*/
+/*!*.problem{*!*/
+/*!*top:60%;*!*/
+/*!*color: #2196F3;*!*/
+/*!*}*!*/
+/*}*/
 
-@media only screen and (min-width: 640px) {
-    .problem{
-        top:60%;
-        color: antiquewhite;
-    }
-}
+/*@media only screen and (min-width: 560px) {*/
+/*.problem{*/
+/*top:60%;*/
+/*color: #FBFA0A;*/
+/*}*/
+/*}*/
+
+/*@media only screen and (min-width: 640px) {*/
+/*.problem{*/
+/*top:60%;*/
+/*color: antiquewhite;*/
+/*}*/
+/*}*/

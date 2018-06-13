@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <title>腾讯企点QTrade：腾讯专为监管推出的金融版QQ</title>
     <link rel="stylesheet" href="dist/zepto.fullpage.css">
@@ -127,7 +127,7 @@
                                 <span>姓名</span>
                                 <span class="star">*</span>
                             </div>
-                            <input type="text" class="real-name" maxlength="8"/>
+                            <input type="text" class="real-name" maxlength="18"/>
                             <div class="name-tip">123</div>
                         </li>
                         <li>
@@ -166,16 +166,39 @@
                 </div>
             </div>
         </div>
+        <!--<div class="page page9">-->
+            <!--<div class="content content-9">-->
+                <!--<div class="title">-->
+                    <!--<p class="hope">敬请期待</p>-->
+                    <!--<p class="mt">6月，我们将于北京、上海、深圳举行客户发布会，期待您的光临。</p>-->
+                <!--</div>-->
+                <!--&lt;!&ndash;<div class="detail">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<p>如您希望参加我们的产品发布会或者获更多产品相关信息， </p>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<p>请发送电邮至：service@qtrade.com.cn</p>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--</div>-->
+        <!--</div>-->
         <div class="page page9">
             <div class="content content-9">
                 <div class="title">
                     <p class="hope">敬请期待</p>
                     <p class="mt">6月，我们将于北京、上海、深圳举行客户发布会，期待您的光临。</p>
+                    <img src="images/9.png" class="map" />
                 </div>
                 <!--<div class="detail">-->
-                    <!--<p>如您希望参加我们的产品发布会或者获更多产品相关信息， </p>-->
-                    <!--<p>请发送电邮至：service@qtrade.com.cn</p>-->
+                <!--<p>如您希望参加我们的产品发布会或者获更多产品相关信息， </p>-->
+                <!--<p>请发送电邮至：service@qtrade.com.cn</p>-->
                 <!--</div>-->
+                <div class="follow">
+                    <div>
+                        <img src="images/qr-code.png" class="qr-code" />
+                    </div>
+                    <div class="weare">
+                        <p>关注我们</p>
+                        <p class="symbol"><<<<<</p>
+                        <p class="understand">长按扫码，即可了解更多</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -187,9 +210,13 @@
 	$(function(){
 		$('.wp-inner').fullpage({
 			page: '.page',
+			resize: false,
 			change: function (index) {
-				if (index.cur == 8) {
+				var pageTotal = ($('.page').length)*1-1;
+				if (index.cur == pageTotal) {
 					$('.start').hide();
+				}else {
+					$('.start').show();
 				}
 			}
 		})
