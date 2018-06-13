@@ -248,59 +248,56 @@
 		}
 	}
 
-    $('.submit').on('click',function () {
-	    var flag = telChange();
-	    checkIsRequest('.real-name','姓名不能为空','.name-tip');
-	    if(!isShow){
-            return
-	    }
-	    if(isShow && !flag){
-		    checkIsRequest('.tel-num','手机号不能为空','.tel-tip');
-	    }
-	    if(!flag){
-            $('.tel-tip').show();
-		    $('.tel-tip').text('手机号格式不正确');
-		    setTimeout(function () {
-			    $('.tel-tip').hide();
-		    },2000);
-		    return
-	    }
-        if(isValue && isShow && flag){
-	        $.ajax({
-			    type: 'post',
-			    url: '/qtrade_bond/api/temp/product_trail/apply.do',
-			    data: {
-				    name: $('.real-name').val(),
-				    mobile: $('.tel-num').val(),
-				    email: $('.email').val(),
-				    org_name: $('.company').val(),
-				    department: $('.branch').val(),
-				    position: $('.duties').val()
-			    },
-			    dataType: 'json',
-			    success: function (data) {
-				    if (String(data.ret) === '0') {
-                        $('.success').show();
-					    $('.success').html('提交成功');
-					    setTimeout(function () {
-						    $('.success').hide();
-						    $('.real-name').val('');
-						    $('.tel-num').val('');
-						    $('.email').val('');
-						    $('.company').val('');
-						    $('.branch').val('');
-						    $('.duties').val('');
-					    },2000);
-				    }else{
-					    $('.success').html('提交失败');
-					    setTimeout(function () {
-						    $('.success').hide();
-					    },2000);
-				    }
-			    }
-		    })
-        }
-    })
+	$('.submit').on('click',function () {
+		var flag = telChange();
+		checkIsRequest('.real-name','姓名不能为空','.name-tip');
+		if(!isShow){
+			return
+		}
+		if(isShow && !flag){
+			checkIsRequest('.tel-num','手机号不能为空','.tel-tip');
+		}
+		if(!flag){
+			$('.tel-tip').show();
+			$('.tel-tip').text('手机号格式不正确');
+			setTimeout(function () {
+				$('.tel-tip').hide();
+			},2000);
+			return
+		}
+		if(isValue && isShow && flag){
+			$('.submit').attr("disabled",true);
+			$.ajax({
+				type: 'post',
+				url: '/qtrade_bond/api/temp/product_trail/apply.do',
+				data: {
+					name: $('.real-name').val(),
+					mobile: $('.tel-num').val(),
+					email: $('.email').val(),
+					org_name: $('.company').val(),
+					department: $('.branch').val(),
+					position: $('.duties').val()
+				},
+				dataType: 'json',
+				success: function (data) {
+					$('.submit').removeAttr("disabled");
+					$('.success').show();
+					if (String(data.ret) === '0') {
+						$('.success').html('提交成功');
+						$('.input-item').val('');
+					}else{
+						$('.success').html('提交失败');
+					}
+					setTimeout(function () {
+						$('.success').hide();
+					},2800);
+				},
+				error: function() {
+					$('.submit').removeAttr("disabled");
+				}
+			})
+		}
+	})
 
 </script>
 </body>
