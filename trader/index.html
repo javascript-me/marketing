@@ -311,7 +311,7 @@
 						$('.success').html('提交成功');
 						$('.input-item').val('');
 					}else{
-						$('.success').html('提交失败');
+						$('.success').html('提交失败' + JSON.stringify(data));
 					}
 					setTimeout(function () {
 						$('.success').hide();
