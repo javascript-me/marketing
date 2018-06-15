@@ -432,9 +432,9 @@ html,body{
     padding-left: 22px;
 }
 .success{
-    display: none;
-    font-size: 14px;
-    margin-top: 5px;
+    width: 100%;
+    text-align: center;
+    color: red;
 }
 .map{
     width: 93%;

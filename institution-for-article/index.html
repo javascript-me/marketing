@@ -190,6 +190,7 @@
 <span class="start"><b></b></span>
 <script src="js/zepto.js"></script>
 <script src="js/zepto.fullpage.js"></script>
+<script src="../js/index.js"></script>
 <script>
 	$(function(){
 		$('.wp-inner').fullpage({
@@ -206,82 +207,82 @@
 		})
     });
 
-	function telChange () {
-		var tel = $('.tel-num').val();
-		tel = tel.replace(/(^\s*)|(\s*$)/g, '');
-		var regs = /^1[3|4|5|7|8]\d{9}$/;
-		if (regs.test(tel)) return true;
-		if (!regs.test(tel) || tel === '') return false
-	}
-
-	var isValue = false;
-	var isShow = false;
-
-	function checkIsRequest(obj,error,errorObj){
-		if ($(obj).val() == ''){
-			isValue = false;
-			isShow = false;
-			$(errorObj).show();
-			$(errorObj).text(error);
-			setTimeout(function () {
-				$(errorObj).hide();
-			},2000);
-		} else{
-			isValue = true;
-			isShow = true
-		}
-	}
-
-	$('.submit').on('click',function () {
-		var flag = telChange();
-		checkIsRequest('.real-name','姓名不能为空','.name-tip');
-		if(!isShow){
-			return
-		}
-		if(isShow && !flag){
-			checkIsRequest('.tel-num','手机号不能为空','.tel-tip');
-		}
-		if(!flag){
-			$('.tel-tip').show();
-			$('.tel-tip').text('手机号格式不正确');
-			setTimeout(function () {
-				$('.tel-tip').hide();
-			},2000);
-			return
-		}
-		if(isValue && isShow && flag){
-			$('.submit').attr("disabled",true);
-			$.ajax({
-				type: 'post',
-				url: '/qtrade_bond/api/temp/product_trail/apply.do',
-				data: {
-					name: $('.real-name').val(),
-					mobile: $('.tel-num').val(),
-					email: $('.email').val(),
-					org_name: $('.company').val(),
-					department: $('.branch').val(),
-					position: $('.duties').val()
-				},
-				dataType: 'json',
-				success: function (data) {
-					$('.submit').removeAttr("disabled");
-					$('.success').show();
-					if (String(data.ret) === '0') {
-						$('.success').html('提交成功');
-						$('.input-item').val('');
-					}else{
-						$('.success').html('提交失败' + JSON.stringify(data));
-					}
-					setTimeout(function () {
-						$('.success').hide();
-					},2800);
-				},
-				error: function() {
-					$('.submit').removeAttr("disabled");
-				}
-			})
-		}
-	})
+//	function telChange () {
+//		var tel = $('.tel-num').val();
+//		tel = tel.replace(/(^\s*)|(\s*$)/g, '');
+//		var regs = /^1[3|4|5|7|8]\d{9}$/;
+//		if (regs.test(tel)) return true;
+//		if (!regs.test(tel) || tel === '') return false
+//	}
+//
+//	var isValue = false;
+//	var isShow = false;
+//
+//	function checkIsRequest(obj,error,errorObj){
+//		if ($(obj).val() == ''){
+//			isValue = false;
+//			isShow = false;
+//			$(errorObj).show();
+//			$(errorObj).text(error);
+//			setTimeout(function () {
+//				$(errorObj).hide();
+//			},2000);
+//		} else{
+//			isValue = true;
+//			isShow = true
+//		}
+//	}
+//
+//	$('.submit').on('click',function () {
+//		var flag = telChange();
+//		checkIsRequest('.real-name','姓名不能为空','.name-tip');
+//		if(!isShow){
+//			return
+//		}
+//		if(isShow && !flag){
+//			checkIsRequest('.tel-num','手机号不能为空','.tel-tip');
+//		}
+//		if(!flag){
+//			$('.tel-tip').show();
+//			$('.tel-tip').text('手机号格式不正确');
+//			setTimeout(function () {
+//				$('.tel-tip').hide();
+//			},2000);
+//			return
+//		}
+//		if(isValue && isShow && flag){
+//			$('.submit').attr("disabled",true);
+//			$.ajax({
+//				type: 'post',
+//				url: '/qtrade_bond/api/temp/product_trail/apply.do',
+//				data: {
+//					name: $('.real-name').val(),
+//					mobile: $('.tel-num').val(),
+//					email: $('.email').val(),
+//					org_name: $('.company').val(),
+//					department: $('.branch').val(),
+//					position: $('.duties').val()
+//				},
+//				dataType: 'json',
+//				success: function (data) {
+//					$('.submit').removeAttr("disabled");
+//					$('.success').show();
+//					if (String(data.ret) === '0' || String(data.ret) === '-1') {
+//						$('.success').html('提交成功');
+//						$('.input-item').val('');
+//					}else if(String(data.ret) === '-2'){
+//						$('.success').html(data.retmsg);
+//					}
+//					setTimeout(function () {
+//						$('.success').hide();
+//					},2800);
+//				},
+//				error: function() {
+//					$('.submit').removeAttr("disabled");
+//				}
+//			})
+//		}
+//	})
 
 </script>
 </body>
