@@ -16,10 +16,10 @@
             <div class="content content-1">
                 <div class="title">
                     <p class="important">腾讯重磅推出</p>
-                    <p class="finance">金融专业版QQ-<span>企点QTrade</span></p>
+                    <p class="finance">金融OTC合规解决方案—QTrade</p>
                 </div>
                 <div class="detail">
-                    <p class="qtrade">腾讯企点QTrade</p>
+                    <p class="qtrade">QTrade</p>
                     <ul class="introduce">
                         <li>
                             <span class="num-color">1</span>
@@ -41,9 +41,9 @@
         <div class="page page7">
             <div class="content content-8">
                 <div class="title">
-                    <p class="qtrade">腾讯企点QTrade</p>
-                    <p class="accord">腾讯企点QTrade既符合监管要求，使用体验也是最佳</p>
-                    <img src="images/8.jpg" class="aaa">
+                    <p class="qtrade">QTrade</p>
+                    <p class="accord">QTrade既符合监管要求，使用体验也是最佳</p>
+                    <img src="images/9.png" class="aaa">
                 </div>
                 <!--<div class="details">何时才能见到我们？</div>-->
             </div>
@@ -68,12 +68,33 @@
                                 <span>手机</span>
                                 <span class="star">*</span>
                             </div>
-                            <input type="text" class="tel-num input-item" maxlength="11" />
+                            <input type="tel" class="tel-num input-item" maxlength="11" />
                         </li>
                         <div class="tel-tip error-tip"></div>
+                        <li>
+                            <div class="label">
+                                <span>QQ号数量</span>
+                                <span class="star">*</span>
+                            </div>
+                            <input type="tel" class="quantity input-item" maxlength="3" />
+                        </li>
+                        <div class="quantity-tip error-tip"></div>
+                        <li>
+                            <div class="label">
+                                <span>是否为群主</span>
+                                <span class="star">*</span>
+                            </div>
+                            <!--<input type="text" class="group-owner input-item" maxlength="11" />-->
+                           <select class="is-owener" id="isOwener">
+                               <!--<option value=""></option>-->
+                               <option value="1">是</option>
+                               <option value="0">否</option>
+                           </select>
+                        </li>
+                        <div class="own-tip error-tip"></div>
                         <li class="e-mail">
                             <span class="label">邮箱</span>
-                            <input type="text" class="email input-item"  maxlength="30" />
+                            <input type="text" class="email input-item" />
                         </li>
                         <li class="agency">
                             <span class="label">公司名称</span>
@@ -130,7 +151,7 @@
         <div class="page page3">
             <div class="content content-3">
                 <div class="title">
-                    <p>腾讯企点QTrade完美符合交易员使用需求</p>
+                    <p>QTrade完美符合交易员使用需求</p>
                     <p class="line"></p>
                     <p class="accord">同时符合监管合规需求</p>
                 </div>
@@ -159,11 +180,13 @@
             <div class="content content-4">
                 <div class="title">
                     <img class="icon-user" src="images/user.jpg" />
-                    <p class="friend">好友上限十万人</p>
-                    <p class="limit">腾讯企点QTrade好友数上限为10万人，并支持一键克隆多个QQ号好友列表</p>
-                    <p class="breach">同时，群成员数量突破至5000人</p>
-                    <p class="breach">企业QQ好友数上限仅为1500人</p>
-                    <img src="images/4.jpg" class="aaa">
+                    <p class="friend">个人QQ关系链无缝迁移</p>
+                    <p class="friend">好友上限10万人</p>
+                    <!--<p class="limit">腾讯企点QTrade好友数上限为10万人，并支持一键克隆多个QQ号好友列表</p>-->
+                    <!--<p class="breach">同时，群成员数量突破至5000人</p>-->
+                    <!--<p class="breach">企业QQ好友数上限仅为1500人</p>-->
+                    <p class="breach">交易员可以将其个人QQ中的关系链无缝迁移到企点QTrade，好友数上限10万人</p>
+                    <img src="images/4.png" class="aaa">
                 </div>
                 <div class="details">找记录大海捞针？不，易如反掌！</div>
             </div>
@@ -172,11 +195,10 @@
             <div class="content content-5">
                 <div class="title">
                     <img class="icon-user icon-users" src="images/users.jpg" />
-                    <p class="friend">账号终生归属</p>
-                    <p class="limit">腾讯企点QTrade账号，一经申请成功，则终身归属交易员个人所有。</p>
-                    <p class="breach">即便离职也不会被收回</p>
-                    <p class="breach">企业QQ账号，离职后将被机构收回</p>
-                    <img src="images/5.jpg" class="aaa">
+                    <p class="friend">QTrade账号属于交易员</p>
+                    <p class="breach">交易员离职后，企点QTrade账号的使用权仍可属于交易员 </p>
+                    <p class="gray">注：之前的沟通信息和数据无法带走</p>
+                    <img src="images/5.png" class="aaa">
                 </div>
                 <div class="details">让你的交易生涯，从一而终</div>
             </div>
@@ -184,11 +206,21 @@
         <div class="page page5">
             <div class="content content-6">
                 <div class="title">
-                    <img class="icon-user" src="images/trend.jpg" />
-                    <p class="friend">定制金融功能</p>
-                    <p class="limit" style="padding-top: 0">腾讯企点QTrade是强大的生产力工具，内嵌专业报价工具并支持群发报价</p>
-                    <p class="limit" style="padding-top: 0">引入腾讯人工智能技术，语义解析贯穿交易过程</p>
-                    <img src="images/6.jpg" class="aaa">
+                    <img class="icon-user" src="images/card.png" />
+                    <p class="friend">安全的全行业通讯录</p>
+                    <p class="limit" style="padding-top: 0">QTrade平台内的交易员之间无需添加好友即可直接发起会话</p>
+                    <img src="images/6.png" class="aaa">
+                </div>
+                <div class="details">再也不怕找不到交易对手</div>
+            </div>
+        </div>
+        <div class="page page10">
+            <div class="content content-12">
+                <div class="title">
+                    <img class="icon-user" src="images/card.jpg" />
+                    <p class="friend">报价板等定制金融解决方案</p>
+                    <p class="limit">AI语义识别，报价文字智能转化为结构性报价，点击报价可以与报价方直接发起对话，并且支持一键群发报价，省去复制粘贴</p>
+                    <img src="images/7.png" class="aaa">
                 </div>
                 <div class="details">你想要的功能,我们都有</div>
             </div>
@@ -196,10 +228,10 @@
         <div class="page page6">
             <div class="content content-7">
                 <div class="title">
-                    <img class="icon-user" src="images/card.jpg" />
-                    <p class="friend">交易员身份实名认证</p>
-                    <p class="limit">申请腾讯企点QTrade，需经过实名认证，认证信息将出现在普通QQ、腾讯企点QTrade的个人资料页中交易身份合法合规，符合当下监管需求</p>
-                    <img src="images/7.jpg" class="aaa">
+                    <img class="icon-user icon-card" src="images/card.png" />
+                    <p class="friend">用户实名认证</p>
+                    <p class="limit">使用QTrade需经过实名认证，认证信息将出现在QTrade的个人资料页中，标识用户的所在机构和联系方式</p>
+                    <img src="images/8.png" class="aaa">
                 </div>
                 <div class="details">规范行业生态，交易有保障</div>
             </div>
@@ -209,12 +241,8 @@
                 <div class="title">
                     <p class="hope">敬请期待</p>
                     <p class="mt">6月，我们将于北京、上海、深圳举行客户发布会，期待您的光临。</p>
-                    <img src="images/9.png" class="map" />
+                    <img src="images/10.png" class="map" />
                 </div>
-                <!--<div class="detail">-->
-                <!--<p>如您希望参加我们的产品发布会或者获更多产品相关信息， </p>-->
-                <!--<p>请发送电邮至：service@qtrade.com.cn</p>-->
-                <!--</div>-->
                 <div class="follow">
                     <div>
                         <img src="images/qr-code.png" class="qr-code" />
@@ -233,21 +261,5 @@
 <script src="js/zepto.js"></script>
 <script src="js/zepto.fullpage.js"></script>
 <script src="../js/index.js"></script>
-<script>
-	$(function(){
-		$('.wp-inner').fullpage({
-			page: '.page',
-			resize: false,
-			change: function (index) {
-				var pageTotal = ($('.page').length)*1-1;
-				if (index.cur == pageTotal) {
-					$('.start').hide();
-				}else {
-					$('.start').show();
-				}
-			}
-		});
-	});
-</script>
 </body>
 </html>

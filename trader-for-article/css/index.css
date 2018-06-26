@@ -93,7 +93,7 @@ html,body{
 .aaa{
     width: 94%;
     margin-left: -10px;
-    margin-top: 10px;
+    margin-top: 16px;
 }
 .content-1 .title{
     top:13%;
@@ -103,11 +103,11 @@ html,body{
     color: #ffffff;
 }
 .important{
-    font-size: 28px;
+    font-size: 24px;
 }
 .finance{
     font-weight: 600;
-    font-size: 29px;
+    font-size: 24px;
     margin-top: 4px;
 }
 .content-1 .detail{
@@ -251,6 +251,9 @@ html,body{
     width: 28px;
     height: 28px;
 }
+.icon-card{
+    height: 30px;
+}
 .friend{
     font-size: 24px;
     font-weight: 500;
@@ -266,6 +269,10 @@ html,body{
 }
 .breach{
     padding-top: 2px;
+    color: #4A5566;
+    padding-right: 28px;
+}
+.gray{
     color: #999999;
 }
 .content-4 .detail{
@@ -292,6 +299,11 @@ html,body{
 }
 .content-8 .title,.content-11 .title{
     padding-top: 34px;
+    padding-left: 28px;
+    font-size: 17px;
+    text-align: left;
+}
+.content-12 .title{
     padding-left: 28px;
     font-size: 17px;
     text-align: left;
@@ -357,7 +369,7 @@ html,body{
 }
 .content-11 .title {
     padding-left: 10%;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 .user-info{
     width: 80%;
@@ -387,6 +399,18 @@ html,body{
     outline: none;
     font-size: 16px;
 }
+.quantity,.group-owner{
+    width: 55%;
+}
+.is-owener{
+    width: 58%;
+    border: none;
+    padding-left: 20px;
+    font-size: 16px;
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+}
 .company{
     padding-left: 20px;
     width: 60%;
@@ -397,7 +421,7 @@ html,body{
 }
 .error-tip{
     display: none;
-    width: 130px;
+    width: 150px;
     color: #faa61a;
     font-size: 14px;
     background: url(../images/icon_error.png) no-repeat 1px 3px;
@@ -421,10 +445,10 @@ html,body{
     border-radius: 3px;
     text-align: center;
     font-size: 18px;
-    margin-top: 10px;
+    /*margin-top: 10px;*/
 }
 .tips{
-    margin-top: 16px;
+    margin-top: 12px;
 }
 .tips p{
     font-size: 14px;
@@ -501,6 +525,12 @@ html,body{
 /*}*/
 /*}*/
 @media only screen and (min-device-width: 375px)and (-webkit-min-device-pixel-ratio: 2) {
+    .is-owener{
+        width: 60%;
+    }
+    .quantity{
+        width: 56%;
+    }
     .content-9 .detail {
         top: 67%;
         padding-left: 28px;
