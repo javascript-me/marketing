@@ -345,6 +345,7 @@ html,body{
 }
 .weare{
     padding-top: 11px;
+    font-size: 14px;
 }
 .follow{
     margin-top: 10px;
@@ -358,7 +359,7 @@ html,body{
     opacity:0.4 ;
 }
 .understand{
-    margin-top: 66px;
+    margin-top: 72px;
 }
 .ml{
     margin-left: 10px;
@@ -398,6 +399,7 @@ html,body{
     border: none;
     outline: none;
     font-size: 16px;
+    background: #ffffff;
 }
 .quantity,.group-owner{
     width: 55%;
@@ -407,6 +409,7 @@ html,body{
     border: none;
     padding-left: 20px;
     font-size: 16px;
+    background: #ffffff;
     appearance:none;
     -moz-appearance:none;
     -webkit-appearance:none;
