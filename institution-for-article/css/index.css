@@ -534,6 +534,9 @@ html,body{
     animation: start 1.5s infinite ease-in-out;
 }
 @media only screen and (min-device-width: 375px)and (-webkit-min-device-pixel-ratio: 2) {
+    .user-info ul li{
+        margin-bottom: 10px;
+    }
     .is-owener{
         width: 60%;
     }
@@ -595,6 +598,9 @@ html,body{
     }
 }
 @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+    .user-info ul li{
+        margin-bottom: 15px;
+    }
     .num-color{
         margin-top: 13px;
     }
@@ -648,6 +654,9 @@ html,body{
     }
 }
 @media only screen and (min-width: 414px) {
+    .user-info ul li{
+        margin-bottom: 15px;
+    }
     .problem{
         top:57.5%;
         /*color: red;*/
@@ -687,23 +696,23 @@ html,body{
     }
 }
 
-@media only screen and (min-width: 480px) {
-    .problem{
-        top:60%;
-        color: #2196F3;
-    }
-}
+/*@media only screen and (min-width: 480px) {*/
+    /*.problem{*/
+        /*top:60%;*/
+        /*color: #2196F3;*/
+    /*}*/
+/*}*/
 
-@media only screen and (min-width: 560px) {
-    .problem{
-        top:60%;
-        color: #FBFA0A;
-    }
-}
+/*@media only screen and (min-width: 560px) {*/
+    /*.problem{*/
+        /*top:60%;*/
+        /*color: #FBFA0A;*/
+    /*}*/
+/*}*/
 
-@media only screen and (min-width: 640px) {
-    .problem{
-        top:60%;
-        color: antiquewhite;
-    }
-}
+/*@media only screen and (min-width: 640px) {*/
+    /*.problem{*/
+        /*top:60%;*/
+        /*color: antiquewhite;*/
+    /*}*/
+/*}*/

@@ -537,6 +537,9 @@ html,body{
     animation: start 1.5s infinite ease-in-out;
 }
 @media only screen and (min-device-width: 375px)and (-webkit-min-device-pixel-ratio: 2) {
+    .user-info ul li{
+        margin-bottom: 10px;
+    }
     .is-owener{
         width: 60%;
     }

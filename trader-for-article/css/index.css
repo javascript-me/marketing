@@ -528,6 +528,9 @@ html,body{
 /*}*/
 /*}*/
 @media only screen and (min-device-width: 375px)and (-webkit-min-device-pixel-ratio: 2) {
+    .user-info ul li {
+        margin-bottom: 10px;
+    }
     .is-owener{
         width: 60%;
     }
@@ -583,6 +586,9 @@ html,body{
     .content-1 .detail {
         top:38%;
     }
+    .user-info ul li {
+        margin-bottom: 15px;
+    }
     /*.content-2 .detail-1 {*/
     /*top:23%;*/
     /*}*/
@@ -627,6 +633,9 @@ html,body{
     /*.problem{*/
     /*padding-top:2.5%;*/
     /*}*/
+    .user-info ul li {
+        margin-bottom: 15px;
+    }
     .content-4 .title p{
         padding-bottom: 8px;
     }
