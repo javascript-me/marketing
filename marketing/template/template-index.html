@@ -1,0 +1,136 @@
+<script id="tpl-index" type="text/html">
+	<%for(var i = 0; i < list.length; i++) {%>
+		<% if (i === 0) {%>
+			<div class="page page-<%:=i+1 %> index">
+		<%} else {%>
+			<% if (i + 1 === list.length) {%>
+				<div class="page page-<%:=i+1 %> last">
+			<%} else {%>
+				<div class="page page-<%:=i+1 %>">
+			<%}%>
+		<%}%>
+			<div class="page-content page-content-<%:=i+1 %>">
+				<% if (list[i].type === "image-text") {%>
+					<div class="image-text-container" style='background: url(<%:=list[i].header.bgImgUrl%>) no-repeat #FFFFFF;background-size: 100%;'>
+						<div class="header" >
+							<p class="title"><%:=list[i].header.title%></p>
+							<p class="sub-title"><%:=list[i].header.subTitle%></p>
+							<% if (list[i].header.splitLine) {%>
+								<p class="split-line"></p>
+							<%}%>
+							<p class="note"><%:=list[i].header.note%></p>
+						</div>
+						<div class="detail container">
+							<% if (list[i].detail.title && list[i].detail.title.length > 0) {%>
+								<div class="title"><%:=list[i].detail.title%></div>
+							<%}%>
+							<ul class="introduce">
+								<%for(var detail_i = 0; detail_i < list[i].detail.data.length; detail_i++) {%>
+									<li class="<%:=list[i].detail.list_style_type%>">
+										<% if (list[i].detail.list_style_type === "list-style-custom-item") { %>
+											<img src="<%:=list[i].detail.data[detail_i].imageUrl%>" >
+										<%} else {%>
+											<span class="list-style">
+												<% if (list[i].detail.list_style_type === "list-style-decimal") { %>
+													<%:=detail_i+1 %>
+												<%}%>
+											</span>
+										<%}%>
+										<span class='text'><%:=list[i].detail.data[detail_i].text%></span>
+									</li>
+								<%}%>	
+							</ul>
+							<% if (list[i].description && list[i].description.length > 0) {%>
+								<div class="description">
+									<%for(var description_i = 0; description_i < list[i].description.length; description_i++) {%>
+										<p class='text'><%:=list[i].description[description_i].text%></span>
+									<%}%>	
+								</div>	
+							<%}%>
+						</div>
+					</div>	
+				<%}%>
+				<% if (list[i].type === "image") {%>
+					<div class="image-container container">
+						<% if (list[i].content.title) {%><p class="title"><%:=list[i].content.title%></p><%}%>
+						<img src="<%:=list[i].content.imageUrl%>" />	
+					</div>			
+				<%}%>
+				<% if (list[i].type === "text-image") {%>
+					<div class="text-image-container container">
+						<% if (list[i].content.header.iconUrl) {%><img class="icon" src="<%:=list[i].content.header.iconUrl%>" /><%}%>
+						<p class="title"><%:=list[i].content.header.title%></p>
+						<p class="description"><%:=list[i].content.header.description%></p>
+						<div class="image">
+							<img src="<%:=list[i].content.imageUrl%>">
+						</div>
+					</div>
+				<%}%>
+				<% if (list[i].type === "qtrade-trial") {%>
+					<div class="text-image-container container">
+						<p class="title">申请产品体验</p>
+						<div class="user-info">
+							<ul>
+								<li>
+									<div class="name label">
+										<span>姓名</span>
+										<span class="star">*</span>
+									</div>
+									<input type="text" class="real-name input-item" maxlength="18"/>
+								</li>
+								<div class="name-tip error-tip"></div>
+								<li>
+									<div class="tel label">
+										<span>手机</span>
+										<span class="star">*</span>
+									</div>
+									<input type="tel" class="tel-num input-item" maxlength="11" />
+								</li>
+								<div class="tel-tip error-tip"></div>
+								<li class="e-mail">
+									<span class="label">邮箱</span>
+									<input type="text" class="email input-item"  maxlength="30" />
+								</li>
+								<li class="agency">
+									<span class="label">公司名称</span>
+									<input type="text" class="company input-item" maxlength="30" />
+								</li>
+								<li class="department">
+									<span class="label">部门</span>
+									<input type="text" class="branch input-item" maxlength="30" />
+								</li>
+								<li class="post">
+									<span class="label">职务</span>
+									<input type="text" class="duties input-item" maxlength="30" />
+								</li>
+							</ul>
+							<div class="success"></div>
+							<button class="submit">提交</button>
+							<div class="tips">
+								<p class="contact">1、提交个人信息后，我们将尽快与您取得联系</p>
+								<p class="know">2、如需了解更多，请联系我们：</p>
+								<p class="saler">客服电话：0755-86707342</p>
+								<p class="service">客服邮箱：service@qtrade.com.cn</p>
+							</div>
+						</div>
+					</div>
+				<%}%>
+				<% if (list[i].isShowFollow) {%>
+					<div class="follow container">
+						<div>
+							<img src="<%:=list[i].qr_code%>" class="qr-code" />
+						</div>
+						<div class="weare">
+							<p class='strong'>关注我们</p>
+							<p class="symbol"><<<<<</p>
+							<p class="understand">长按扫码，即可了解更多</p>
+						</div>
+					</div>
+				<%}%>
+				<% if (list[i].nextTips && list[i].nextTips.length > 0) {%>
+					<div class="next-tips"><%:=list[i].nextTips%></div>
+				<%}%>
+			</div>
+		</div>
+	<%}%>
+</script>

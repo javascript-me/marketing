@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>腾讯企点QTrade：腾讯专为监管推出的金融版QQ</title>
+    <link rel="stylesheet" href="./static/css/zepto.fullpage.css">
+	<link rel="stylesheet" href="./static/css/style.css?timestamp=201808211132">
+</head>
+<body>
+<div class="body-container">
+    <div id="body-content" class="body-content">
+    </div>
+</div>
+<div id="test"></div>
+<span class="start"><b></b></span>
+<script src="./static/js/lib/zepto.js"></script>
+<script src="./static/js/lib/zepto.fullpage.js"></script>
+<script src="./static/js/lib/template.js"></script>
+<script src="./static/js/index.js?timestamp=201808211132"></script>
+</body>
+<script>
+	function getQueryString(name)
+	{
+		var url = window.location.search;
+		var reg = new RegExp('(^|&)'+ name +'=([^&]*)(&|$)','i');
+		var r = url.substr(1).match(reg);
+		if (r != null) return decodeURI(r[2]); return null;
+	}
+	$(function(){
+		var type = getQueryString('type')
+		console.log('type:', type)
+		$.get("./static/data/" + type + "-data.js",function(data){
+			var pageData = eval('(' + data + ')');
+			$.get("./template/template-index.html",function(data){
+			   	$("#test").html(data);
+				var tpl = document.getElementById('tpl-index').innerHTML;
+				var html = template(tpl, {list: pageData})
+				$('#body-content').addClass(type)
+				$('#body-content').append(html)	
+				$('#body-content').fullpage({
+					page: '.page',
+					resize: false,
+					change: function (index) {
+						var pageTotal = ($('.page').length)*1-1;
+						if (index.cur == pageTotal) {
+							$('.start').hide();
+						}else {
+							$('.start').show();
+						}
+					}
+				});
+			});	
+
+			var hasTrial = false
+			pageData.forEach(function(page){
+				if (page.type === 'qtrade-trial') {
+					hasTrial = true
+				}
+			})
+			
+			console.log(hasTrial)
+			if (hasTrial) {
+				$("body").on("click", ".submit", function() {
+					var quantity = $('.quantity').val();
+					var owenr = $('.is-owener').val();
+					var telFlag = telChange();
+					var numFlag = num();
+					checkIsRequest('.real-name','姓名不能为空','.name-tip');
+					if(!isShow){
+						return
+					}
+					if(!telFlag){
+						$('.tel-tip').show();
+						$('.tel-tip').text('手机号格式不正确');
+						setTimeout(function () {
+							$('.tel-tip').hide();
+						},2000);
+						return
+					}
+					if(quantity == ''){
+						checkIsRequest('.quantity','QQ号数量不能为空','.quantity-tip');
+						return
+					}
+					if(owenr == '' && numFlag){
+						checkIsRequest('.is-owener','请填写是否为群主','.own-tip');
+						return
+					}
+					if(isValue && isShow && telFlag && numFlag){
+						if (isEmoji($('.real-name').val())){
+							$('.name-tip').show();
+							$('.name-tip').text('输入格式错误');
+							setTimeout(function () {
+								$('.name-tip').hide();
+							},2000);
+						}else {
+							$('.submit').attr("disabled",true);
+							$.ajax({
+								type: 'post',
+								url: '/qtrade_bond/api/temp/product_trail/apply.do',
+								data: {
+									name: $('.real-name').val(),
+									mobile: $('.tel-num').val(),
+									email: $('.email').val(),
+									org_name: $('.company').val(),
+									department: $('.branch').val(),
+									position: $('.duties').val(),
+									qq_amount: quantity,
+									is_group_holder: owenr
+								},
+								dataType: 'json',
+								success: function (data) {
+									$('.submit').removeAttr("disabled");
+									$('.success').show();
+									if (String(data.ret) === '0' || String(data.ret) === '-1') {
+										$('.success').html('提交成功');
+										$('.input-item').val('');
+										var x = document.getElementById("isOwener");
+										x.selectedIndex = -1;
+									}else if(String(data.ret) === '-2'){
+										$('.success').html(data.retmsg);
+									}
+									setTimeout(function () {
+										$('.success').hide();
+									},2800);
+								},
+								error: function() {
+									$('.submit').removeAttr("disabled");
+								}
+							})
+						}
+					}
+				})
+			}
+		})
+	});
+</script>
+
+</html>
